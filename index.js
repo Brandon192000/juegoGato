@@ -81,9 +81,9 @@ const ahorcado = [
     =========`
 ];
 
-//======================================================================
+//--------------------------------------------------------------------------//
 // FUNCIONES
-//======================================================================
+//--------------------------------------------------------------------------//
 let juegoActivo = false;//bandera para ver si inicio el juego
 
 
@@ -119,16 +119,11 @@ function actualizarDibujo() {
 }
 
 function verificarLetraIngresada(letraUsuario) {
-
-    if (!juegoActivo) {
-        alert('¡Presiona "Empezar Juego" para comenzar!');
-        return; // Salir si el juego no está activo
-    }
     
     letraUsuario = letraUsuario.toLowerCase().trim(); 
 
     if (historialLetrasUsuario.includes(letraUsuario)) {
-        alert(`Ya intentaste con la letra "${letraUsuario}". Intenta con otra.`);
+        alert(`Ya intentaste con la letra"${letraUsuario}" 🤔. Intenta con otra.`);
         return;
     }
 
@@ -195,7 +190,7 @@ function timerDeCronometro(){
         } else {
 
             clearInterval(timerInterval);
-            alert('Se acabo el tiempo😔');
+            alert('Se acabo el tiempo😭');
             reiniciar();
 
         }

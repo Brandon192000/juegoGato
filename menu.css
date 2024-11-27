@@ -1,0 +1,100 @@
+body {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    background-image: url('/img/fast-food-background-vector.jpg'); /* Cambia esta URL por la imagen deseada */
+    background-size: cover; /* La imagen cubre todo el fondo */
+    background-position: center; /* Centrar la imagen */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    background-attachment: fixed; /* Mantiene la posición del fondo al hacer scroll */
+}
+
+.container {
+    max-width: 70%; /* Reducir el ancho del contenedor */
+    height: auto; /* Permitir que crezca según el contenido */
+    padding: 20px 10px; /* Ajustar el padding */
+    background-color: #222; /* Fondo gris oscuro */
+    border: 3px solid #000; /* Bordes negros */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1); /* Sombra */
+    overflow: hidden;
+}
+
+/* Columna del menú */
+.menu-column {
+    flex: 1;
+    border-right: 3px solid #ccc; 
+    padding: 20px;
+}
+
+.description-column {
+    flex: 2;
+    padding: 30px 20px;
+    border: 2px black solid; /* Borde negro */
+}
+.custum-menu {
+    flex: 1; /* Deja que ocupe todo el espacio disponible */
+    border: 2px solid black; /* Borde negro */
+    padding: 30px 30px; /* Ajustar el padding para hacerlo más alto */
+    height: 100%; /* Forzar altura completa */
+}
+
+.menu-img {
+    width: 100%; /* Ancho total */
+    height: 200px; /* Incrementar la altura de las imágenes */
+    object-fit: cover; /* Ajustar sin deformar */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar */
+    transition: transform 0.3s ease; /* Animación suave */
+}
+
+
+.menu-img:hover,
+.highlight {
+    transform: scale(1.05);
+    border: 2px solid #007bff; 
+}
+
+/* Imagen principal */
+#imagen-principal {
+    width: 100%;
+    max-width: 700px; /* Reducir el ancho máximo */
+    height: 550px; /* Ajustar la altura */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    display: block;
+}
+
+/* Imagen principal */
+.description-column img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Encabezados */
+h5 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Texto de descripción */
+.description-column p {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Borde interno entre las columnas */
+.row {
+    width: 100%;
+    height: 100%;
+}
