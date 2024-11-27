@@ -1,0 +1,168 @@
+/* Fondo del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/img/descarga\ \(1\).jpeg'); /* Cambia por tu imagen */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la pantalla */
+    margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.25); /* Fondo semitransparente */
+    backdrop-filter: blur(15px); /* Efecto vidrio */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+    margin: 0 20px; /* Espaciado horizontal en pantallas pequeñas */
+}
+
+/* Título principal */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4a4a4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+h1 span {
+    font-size: 1.5rem;
+    color: #6c63ff;
+}
+
+pre#dibujo {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8rem; /* Aumenta el tamaño del texto */
+    
+    background: rgba(255, 255, 255, 0.7); /* Fondo claro */
+    padding: 25px; /* Aumenta el espacio interno */
+    display: inline-block;
+    border-radius: 15px; /* Bordes más redondeados */
+    text-align: left;
+    border: 2px solid #ddd; /* Borde más grueso */
+    color: #333;
+    margin: 20px 0;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    max-width: 400px; /* Limita el ancho máximo */
+    height: auto; /* Permite que la altura crezca con el contenido */
+}
+
+/* Resultado de la palabra */
+#resultado {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8rem;
+    letter-spacing: 5px;
+    color: #333;
+    margin: 20px 0;
+}
+
+/* Estilo de intentos restantes */
+#intentos {
+    font-weight: bold;
+    color: #e63946;
+}
+
+/* Teclado */
+.teclado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Botones del teclado */
+.teclado .btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    padding: 0;
+    text-align: center;
+    background: #6c63ff;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.teclado .btn:hover {
+    background: #524adb;
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+/* Historial de letras intentadas */
+#historial {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.7); /* Fondo claro para mejor legibilidad */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Letras intentadas */
+.letras-intentadas span {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #555;
+}
+
+.btn-limpiar {
+    background-color: #ffc107; /* Amarillo Bootstrap o personalizado */
+    color: #212529; /* Texto oscuro para buen contraste */
+    border: 1px solid #ffc107; /* Borde del mismo color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100px;
+    height: 50px;
+    margin-left: -23.5rem;
+}
+
+/* Estilo al pasar el mouse */
+.btn-limpiar:hover {
+    background-color: #e0a800; /* Amarillo más oscuro */
+    border-color: #e0a800;
+    transform: scale(1.05); /* Ligeramente más grande */
+}
+
+.btn-customEmpezar{
+    width: 150px;
+    height: 200px;
+    font-size: 1.5rem;
+    background-color: #e0a800;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    pre#dibujo {
+        font-size: 1rem;
+    }
+
+    #resultado {
+        font-size: 1.5rem;
+    }
+
+    .teclado .btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+}
