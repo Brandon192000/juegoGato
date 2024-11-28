@@ -9,65 +9,75 @@
     <link rel="stylesheet" href="/css/menu.css">
 </head>
 <body class="bg-light">
-    <div class="container my-5 p-5">
+    <main class="container my-5 p-5">
         <div class="row">
-            <!-- Columna del menú -->
-            <div class="col-md-5 custum-menu">
+            
+            <section class="col-md-5 custum-menu">
                 <h5 class="text-center">Menú</h5>
-                <div class="row g-4">
-                    <!-- Fila de dos imágenes -->
-                    <div class="col-6">
+                <section class="row g-4">
+                   
+                    <article class="col-6">
                         <img src="/img/ham.jpeg" 
                              class="menu-img" 
                              onclick="mostrarDescripcion('Hamburguesa clásica con papas fritas.', this)"
                              alt="Hamburguesa">
-                    </div>
-                    <div class="col-6">
+                    </article>
+                    <article class="col-6">
                         <img src="/img/pasca 2 empa.avif" 
                              class="menu-img" 
                              onclick="mostrarDescripcion('Deliciso pescado empanizado con ensalada.', this)"
                              alt="pescado empanizado">
-                    </div>
-                    <!-- Siguiente fila de dos imágenes -->
-                    <div class="col-6">
+                    </article>
+                    
+                    <article class="col-6">
                         <img src="/img/pasca.jpeg" 
                              class="menu-img" 
                              onclick="mostrarDescripcion('Pescado al ajillo con verduras.', this)"
                              alt="Pescado al ajillo">
-                    </div>
-                    <div class="col-6">
+                    </article>
+                    <article class="col-6">
                         <img src="/img/spag.jpg" 
                              class="menu-img" 
                              onclick="mostrarDescripcion('Pasta italiana con salsa marinara.', this)"
                              alt="Pasta italiana">
-                    </div>
-                    <!-- Última fila -->
-                    <div class="col-6">
+                    </article>
+
+                    <article class="col-6">
                         <img src="/img/tacos.webp" 
                              class="menu-img" 
                              onclick="mostrarDescripcion('Tacos mexicano Full picante como ellos lo fomentaron', this)"
                              alt="tacos">
-                    </div>
-                </div>
-            </div>
+                    </article>
 
-            <!-- Columna de descripción -->
-            <div class="col-md-7 description-column text-center">
+                    <article class="col-6">
+                        <img src="/img/pizza.jpg" 
+                             class="menu-img" 
+                             onclick="mostrarDescripcion('Pizza delicius', this)"
+                             alt="pizza artesanal">
+                    </article>
+                </section>
+            </section>
+
+           
+            <section class="col-md-7 description-column text-center">
                 <h5 class="text-center">Descripción</h5>
-                <img id="imagen-principal" class="responsive-img" src="/img/hombreeee.jpg">
-                <p id="descripcion">Haz clic en una imagen del menú para ver los detalles del plato.</p>
-            </img>
-        </div>
-    </div>
+                <img id="imagen-principal" class="imagen-principal responsive-img" src="/img/hombreeee.jpg">
+                    <p id="descripcion">Haz clic en una imagen del menu para ver los detalles del plato.</p>
+                </img>
+            </section>
 
-    <footer class="text-center text-white py-3">
-        <a href="/html/paginaPricipal.html" class="text-white text-decoration-none">
-            &larr; Volver a la Página Principal
-        </a>
-    </footer>
+        </div>
+
+        <footer class="text-center text-white py-3">
+            <a href="/html/paginaPricipal.html" class="text-white text-decoration-none">
+                &larr; Volver a la Pagina Principal
+            </a>
+        </footer>
+    </main>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/menu.js"></script>
+
 </body>
 </html>
