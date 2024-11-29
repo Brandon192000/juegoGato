@@ -1,22 +1,63 @@
+const imagenPrincipal = document.getElementById('imagen-principal');
+const descripcionTexto = document.getElementById('descripcion');
+const imagenesMenu = document.querySelectorAll('.menu-img');
+const numeroImagen = document.getElementById('numero-imagen');
+const btnAnterior = document.getElementById("anterior");
+const btnSiguiente = document.getElementById("siguiente");
 
-const imagenPrincipal = document.getElementById('imagen-principal');//agarro el id de la imagen principal
-const descripcionTexto = document.getElementById('descripcion');//tambien la de la descripcion
+const descripciones = [//descripciones
+    'Hamburguesa clásica con papas fritas.',
+    'Delicioso pescado empanizado con ensalada.',
+    'Pescado al ajillo con verduras.',
+    'Pasta italiana con salsa marinara.',
+    'Tacos mexicanos Full picante como ellos lo fomentaron.',
+    'Pizza artesanal deliciosa.'
+];
 
-function mostrarDescripcion(descripcion, imgElemento) {
+let indiceActual = 0;//indice actual
+let contador;//contador img
+let intervalo = setInterval(cambiarImagenAutomatica, 5000);//interval
 
-    descripcionTexto.textContent = descripcion;//aqui cambio la descripcion por la que solicitan
+// Mostrar imagen seleccionada y actualizar descripción
+function mostrarDescripcion(index) {
 
-   
-    document.querySelectorAll('.menu-img').forEach(img => img.classList.remove('highlight'));//aqui voy a iterar  por todas las imagenes y le voy a quitar el efecto highlight
-    imgElemento.classList.add('highlight'); // aqui solo la imagen que esta seleccionada va tener el efecto
+    descripcionTexto.textContent = descripciones[index]; // muetra la descripcion
+    imagenPrincipal.classList.add('fade-out');//agrega animacion
 
-    imagenPrincipal.classList.add('fade-out');
-    
     setTimeout(() => {
 
-        imagenPrincipal.src = imgElemento.src; // aqui lo que voy a hacer es voy a cambiar la imagen principal por la seleccionada 
-        imagenPrincipal.classList.remove('fade-out'); // Quitar clase que tiene la animacion para volver a aparecer 
-        
-    }, 500);
+        imagenPrincipal.src = imagenesMenu[index].src; // cambia imagen principal
 
+        
+        contador = index + 1;//actualiza el contador
+
+        numeroImagen.textContent = `Imagen numero: ${contador}`;; // muestra num de imagen
+
+        setTimeout(() => {
+            imagenPrincipal.classList.remove('fade-out');//elimina animacion
+        }, 1000);//1s
+
+        imagenesMenu.forEach(img => img.classList.remove('highlight'));
+        imagenesMenu[index].classList.add('highlight');
+
+    }, 1000);//1s
 }
+
+
+function cambiarImagenAutomatica() {
+    mostrarDescripcion(indiceActual); // mjuestra la imagen seleccionada con su descripciion
+    indiceActual = (indiceActual + 1) % imagenesMenu.length; // ciclo de las imagenes
+}
+
+
+imagenesMenu.forEach((img, index) => {
+    img.addEventListener('click', () => {
+        clearInterval(intervalo); // limpia y para el intervalo
+        mostrarDescripcion(index);
+        indiceActual = index; // actualiza el indice
+        intervalo = setInterval(cambiarImagenAutomatica, 5000); // reinicia
+    });
+});
+
+
+

@@ -100,7 +100,7 @@ h5 {
 
 
 #imagen-principal {
-    transition: opacity 0.5s ease-in-out; 
+    transition: opacity 1s ease-in-out; 
     opacity: 1; 
 }
 
@@ -108,6 +108,24 @@ h5 {
     opacity: 0;
 }
 
+.imagen-contenedor {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 700px; /* Ajusta al tamaño deseado */
+}
+
+.numero-imagen {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    pointer-events: none;
+}
 
 /* Ajustes responsivos */
 @media (max-width: 768px) {

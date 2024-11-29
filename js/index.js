@@ -33,8 +33,8 @@ let btnLimpiar = document.getElementById('btnLimpiar')
 document.querySelectorAll('.teclado button').forEach(btn => btn.disabled = false); // Habilitar botones
 
 let juegoActivo = false;//bandera para ver si inicio el juego
-const ahorcado = [
-`
+const ahorcado = {
+    0: `
     _______
     |     |
           |
@@ -42,23 +42,23 @@ const ahorcado = [
           |
           |
     =========`,
-`
-    _______
-    |     |
-    O     |
-          |
-          |
-          |
-    =========`,
-`
+    1: `
     _______
     |     |
     O     |
+          |
+          |
+          |
+    =========`,
+    2: `
+    _______
+    |     |
+    O     |
     |     |
           |
           |
     =========`,
-`
+    3: `
     _______
     |     |
     O     |
@@ -66,7 +66,7 @@ const ahorcado = [
           |
           |
     =========`,
-`
+    4: `
     _______
     |     |
     O     |
@@ -74,7 +74,7 @@ const ahorcado = [
           |
           |
     =========`,
-`
+    5: `
     _______
     |     |
     O     |
@@ -82,7 +82,7 @@ const ahorcado = [
    /      |
           |
     =========`,
-`
+    6: `
     _______
     |     |
     O     |
@@ -90,8 +90,7 @@ const ahorcado = [
    / \\    |
           |
     =========`
-];
-
+};//si no le pongo doble \\ no sale el bichito
 //--------------------------------------------------------------------------//
 
 //--------------------------------------------------------------------------//
@@ -111,7 +110,7 @@ function iniciarJuego() {
 
     document.querySelectorAll('.teclado button').forEach(button => {
 
-        button.disabled = false; // Habilitar los btn
+        button.disabled = false; // Habilita los btn
 
     });
 
@@ -167,7 +166,7 @@ function verificarLetraIngresada(letraUsuario) {
     if (!acierto) { // si la palabra no estaba
 
         numIntentos--; // se le resta al contador
-        alert(`La letra "${letraUsuario}" no está en la palabra. Te quedan estos intentos: ${numIntentos}`);  // muestra un msj al usuario de que le quedan tantos intentos para que tenga cuidado
+        alert(`La letra "${letraUsuario}" no esta en la palabra, le quedan estos intentos: ${numIntentos}`);  // muestra un msj al usuario de que le quedan tantos intentos para que tenga cuidado
         actualizar(); // Actualiza el contador de intentos en el html
         
     }
@@ -187,7 +186,7 @@ function verificarFinJuego() {
     } else if (numIntentos === 0) {//o si el contador de intentos llega a 0
 
         actualizarDibujo();//muestra el ultimo bicho del arreglo ahoracado
-        alert(`¡Lo siento, perdiste! La palabra era: ${palabraAdivinar.join('')}`);
+        alert(`😫Perdio😭 La palabra era: ${palabraAdivinar.join('')}`);
         reiniciar();//reinicia
 
     }
